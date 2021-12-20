@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://seringa.png" type="Texture" id=1]
+[ext_resource path="res://Jogador.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 101.004, 546.569 )
+
+[node name="Jogador" type="Sprite"]
+position = Vector2( 12.3888, 30.1725 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="tempo_recarga" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="col" type="CollisionShape2D" parent="hitbox"]
+visible = false
+position = Vector2( 14.9831, 74.9153 )
+shape = SubResource( 1 )
+
+[connection signal="timeout" from="tempo_recarga" to="." method="_on_tempo_recarga_timeout"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
