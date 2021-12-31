@@ -1,6 +1,6 @@
 <h1 align="center">Game da Vacina</h1>
 
-<img src="#" alt="demonstração"/>
+<img src="/img/demonstration.gif" alt="demonstração"/>
 
 ## 💻 Projeto
 
